@@ -2,7 +2,6 @@ package ui;
 
 import Dados.ACMERobots;
 import Dados.Industrial;
-import Dados.Robo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -20,6 +19,7 @@ public class TelaI {
     private JTextField idField;
     private JTextField modeloField;
     private JButton menuRobosButton;
+    private JButton limparButton;
 
 
     public TelaI(Aplicacao app,ACMERobots robots) {
@@ -50,7 +50,7 @@ public class TelaI {
                     }
                 } catch(NumberFormatException npe){
                     JOptionPane.showMessageDialog(aplicacao, "Insira os valores corretamente");
-                    estadoArea.setText("Id deve receber inteiros\nModelo deve ser caracteres\nNivel deve inteiros de 1 a 3");
+                    estadoArea.setText("Id deve receber inteiros\nModelo deve ser caracteres\nSetor deve ser caracteres");
                 }
             }
         });
@@ -58,6 +58,15 @@ public class TelaI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 aplicacao.mudaPainel(1);
+            }
+        });
+        limparButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                estadoArea.setText("");
+                idField.setText("");
+                modeloField.setText("");
+                setorField.setText("");
             }
         });
     }

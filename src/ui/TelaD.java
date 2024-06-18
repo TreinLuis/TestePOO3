@@ -2,7 +2,6 @@ package ui;
 
 import Dados.ACMERobots;
 import Dados.Domestico;
-import Dados.Robo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -20,6 +19,7 @@ public class TelaD {
     private JTextField idField;
     private JTextField modeloField;
     private JButton menuRobosButton;
+    private JButton limparButton;
 
 
     public TelaD(Aplicacao app,ACMERobots robots) {
@@ -62,6 +62,15 @@ public class TelaD {
             @Override
             public void actionPerformed(ActionEvent e) {
                 aplicacao.mudaPainel(1);
+            }
+        });
+        limparButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                estadoArea.setText("");
+                idField.setText("");
+                modeloField.setText("");
+                nivelField.setText("");
             }
         });
     }

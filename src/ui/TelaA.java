@@ -20,6 +20,7 @@ public class TelaA {
     private JTextField areaField;
     private JPanel painel1;
     private JLabel imgRoboField;
+    private JButton limparButton;
 
 
     public TelaA(Aplicacao app,ACMERobots robots) {
@@ -51,7 +52,7 @@ public class TelaA {
                     }
                 } catch(NumberFormatException npe){
                     JOptionPane.showMessageDialog(aplicacao, "Insira os valores corretamente");
-                    estadoArea.setText("Id deve receber inteiros\nModelo deve ser caracteres\nNivel deve inteiros de 1 a 3");
+                    estadoArea.setText("Id deve receber inteiros\nModelo deve ser caracteres\nArea deve ser números\nUso deve ser caracteres");
                 }
             }
         });
@@ -59,6 +60,17 @@ public class TelaA {
             @Override
             public void actionPerformed(ActionEvent e) {
                 aplicacao.mudaPainel(1);
+            }
+        });
+        limparButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                estadoArea.setText("");
+                idField.setText("");
+                modeloField.setText("");
+                usoField.setText("");
+                areaField.setText("");
+
             }
         });
     }
