@@ -15,15 +15,10 @@ import java.util.List;
 
 public class Tela1 {
     Locacao locacao = new Locacao();
-    private JTextField idField;
     private ACMERobots acmeRobots = new ACMERobots();
     private List<Robo> listaRobos;
-    private Aplicacao aplicacao ;
     private JPanel panel1;
-    private JTextField modeloField;
-    private JTextField diariaField;
     private JButton limparButton;
-    private JButton cadastrarButton;
     private JButton fecharButton;
     private JTextArea estadoArea;
     private JButton exibirButton;
@@ -33,7 +28,6 @@ public class Tela1 {
     private JButton industrialButton;
 
     public Tela1(Aplicacao app, ACMERobots robots) {
-        this.aplicacao = app;
         acmeRobots = robots;
         listaRobos = acmeRobots.getListaRobos();
 
@@ -41,11 +35,7 @@ public class Tela1 {
         limparButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                idField.setText("");
-                modeloField.setText("");
-                diariaField.setText("");
                 estadoArea.setText("");
-
             }
         });
 
