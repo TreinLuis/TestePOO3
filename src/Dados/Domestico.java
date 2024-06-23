@@ -6,6 +6,7 @@ public class Domestico extends Robo{
     public Domestico(int id, String modelo, int nivel) {
         super(id, modelo);
         this.nivel = nivel;
+        determinaValorDiario();
     }
 
     public int getNivel() {
@@ -30,5 +31,14 @@ public class Domestico extends Robo{
             setValorDiario(50);
         }
         return getValorDiario() * dias;
+    }
+    public void determinaValorDiario() {
+        if(nivel == 1){
+            setValorDiario(10);
+        }else if(nivel == 2){
+            setValorDiario(20);
+        }else {
+            setValorDiario(50);
+        }
     }
 }

@@ -8,6 +8,7 @@ public class Industrial extends Robo {
     public Industrial(int id, String modelo, String setor) {
         super(id, modelo);
         this.setor = setor;
+        setValorDiario(90);
     }
 
     public String getSetor() {
@@ -23,7 +24,6 @@ public class Industrial extends Robo {
         return "Informações do Robo Industrial!\n" + super.toString() + "Setor = " + this.setor ;
     }
     public double calculaLocacao(int dias) {
-        setValorDiario(90);
         return getValorDiario() * dias;
     }
 }

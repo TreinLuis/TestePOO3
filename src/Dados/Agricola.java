@@ -35,4 +35,7 @@ public class Agricola extends Robo{
         setValorDiario(10 * area);
         return dias * getValorDiario();
     }
+    private void determinaValorDiario() {
+        setValorDiario(area*10);
+    }
 }
