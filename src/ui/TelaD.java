@@ -13,13 +13,13 @@ public class TelaD {
     private JPanel panel1;
     private JTextField nivelField;
     private JButton cadastrarButton;
-    private JLabel imgRoboField;
     private JButton fecharButton;
     private JTextArea estadoArea;
     private JTextField idField;
     private JTextField modeloField;
     private JButton menuRobosButton;
     private JButton limparButton;
+    private JLabel imgRoboField;
 
 
     public TelaD(Aplicacao app,ACMERobots robots) {
@@ -48,6 +48,9 @@ public class TelaD {
                         if (acmeRobots.adicionarRobo(robo)){
                             JOptionPane.showMessageDialog(aplicacao, "Robo doméstico cadastrado com sucesso!");
                             estadoArea.setText(robo.toString());
+                            idField.setText("");
+                            modeloField.setText("");
+                            nivelField.setText("");
                         } else {
                             JOptionPane.showMessageDialog(aplicacao, "Id já existente!");
                         }

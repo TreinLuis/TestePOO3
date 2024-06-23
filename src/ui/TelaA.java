@@ -19,8 +19,8 @@ public class TelaA {
     private JTextField usoField;
     private JTextField areaField;
     private JPanel painel1;
-    private JLabel imgRoboField;
     private JButton limparButton;
+    private JLabel imgRoboField;
 
 
     public TelaA(Aplicacao app,ACMERobots robots) {
@@ -47,6 +47,10 @@ public class TelaA {
                     if (acmeRobots.adicionarRobo(robo)){
                         JOptionPane.showMessageDialog(aplicacao, "Robo agricola cadastrado com sucesso!");
                         estadoArea.setText(robo.toString());
+                        idField.setText("");
+                        modeloField.setText("");
+                        usoField.setText("");
+                        areaField.setText("");
                     } else {
                         JOptionPane.showMessageDialog(aplicacao, "Id já existente!");
                     }

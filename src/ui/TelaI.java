@@ -13,13 +13,13 @@ public class TelaI {
     private JPanel panel1;
     private JTextField setorField;
     private JButton cadastrarButton;
-    private JLabel imgRoboField;
     private JButton fecharButton;
     private JTextArea estadoArea;
     private JTextField idField;
     private JTextField modeloField;
     private JButton menuRobosButton;
     private JButton limparButton;
+    private JLabel imgRoboField;
 
 
     public TelaI(Aplicacao app,ACMERobots robots) {
@@ -45,6 +45,9 @@ public class TelaI {
                     if (acmeRobots.adicionarRobo(robo)){
                         JOptionPane.showMessageDialog(aplicacao, "Robo industrial cadastrado com sucesso!");
                         estadoArea.setText(robo.toString());
+                        idField.setText("");
+                        modeloField.setText("");
+                        setorField.setText("");
                     } else {
                         JOptionPane.showMessageDialog(aplicacao, "Id já existente!");
                     }

@@ -14,7 +14,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Tela1 {
-    Locacao locacao = new Locacao();
     private ACMERobots acmeRobots = new ACMERobots();
     private List<Robo> listaRobos;
     private JPanel panel1;
@@ -22,10 +21,10 @@ public class Tela1 {
     private JButton fecharButton;
     private JTextArea estadoArea;
     private JButton exibirButton;
-    private JLabel imgRoboField;
     private JButton domesticoButton;
     private JButton agricolaButton;
     private JButton industrialButton;
+    private JLabel imgRoboField;
 
     public Tela1(Aplicacao app, ACMERobots robots) {
         acmeRobots = robots;
