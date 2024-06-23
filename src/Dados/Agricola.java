@@ -30,4 +30,9 @@ public class Agricola extends Robo{
     public String toString() {
         return "Informações do Robo Agricola!\n" + super.toString() + "Uso = " + this.uso + " | Area = " + this.area + " metros quadrados";
     }
+    @Override
+    public double calculaLocacao(int dias) {
+        setValorDiario(10 * area);
+        return dias * getValorDiario();
+    }
 }

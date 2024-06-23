@@ -22,4 +22,8 @@ public class Industrial extends Robo {
     public String toString() {
         return "Informações do Robo Industrial!\n" + super.toString() + "Setor = " + this.setor ;
     }
+    public double calculaLocacao(int dias) {
+        setValorDiario(90);
+        return getValorDiario() * dias;
+    }
 }

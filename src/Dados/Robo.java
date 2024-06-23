@@ -41,4 +41,6 @@ public abstract class Robo {
                 " | Modelo = " + modelo +
                 " | ";
     }
+    public abstract double calculaLocacao(int dias);
+
 }
