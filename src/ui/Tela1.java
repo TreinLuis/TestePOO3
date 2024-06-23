@@ -1,15 +1,11 @@
 package ui;
 
 import Dados.ACMERobots;
-import Dados.Industrial;
-import Dados.Locacao;
 import Dados.Robo;
 
 import javax.swing.*;
-import javax.swing.text.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -41,13 +37,15 @@ public class Tela1 {
         exibirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(listaRobos.isEmpty()){
+                try {
+                    estadoArea.setText("");
+                    listaRobos.stream()
+                            .sorted(Comparator.comparingInt(Robo::getId))
+                            .forEach(a -> estadoArea.append(a.toString() + "\n"));
+                }catch (NullPointerException e1) {
                     estadoArea.setText("Adicione pelo menos 1 Robo!");
                 }
-                estadoArea.setText("");
-                listaRobos.stream()
-                        .sorted(Comparator.comparingInt(Robo::getId))
-                        .forEach(a -> estadoArea.append(a.toString() + "\n"));            }
+            }
         });
         fecharButton.addActionListener(new ActionListener() {
             @Override
